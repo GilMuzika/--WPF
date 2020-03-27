@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPF_Exercise_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Exercise_2"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="700" Width="800" Loaded="Window_Loaded"
+        
+                
+        
+        
+        >
+    <StackPanel>
+        <local:Part_1 Title="Exercise 2 Part 1" Visibility="Collapsed"/>
+        <local:Part_2 Title="Exercise 2 Part 2" Visibility="Collapsed"/>
+        <local:Part_3 Title="Exercise 2 Part 3" Visibility="Collapsed" 
+            UserNameDependency="{Binding VmUserName, Source={StaticResource currentViewModelPart_3},ValidatesOnDataErrors=True, Mode=TwoWay}"
+            PasswordDependency="{Binding VmPassword, Source={StaticResource currentViewModelPart_3},ValidatesOnDataErrors=True, Mode=TwoWay}"
+            Style="{StaticResource stylePart3TriggeredColor}"
+                      />
+        <!--
+        
+                      
+        -->
+
+        <ComboBox x:Name="cmbCombo" SelectionChanged="cmbCombo_SelectionChanged" IsSynchronizedWithCurrentItem="True" Margin="50"/>
+    </StackPanel>
+</Window>

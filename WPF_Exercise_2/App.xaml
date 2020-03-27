@@ -1,0 +1,54 @@
+﻿<Application x:Class="WPF_Exercise_2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WPF_Exercise_2"
+             xmlns:vm="clr-namespace:WPF_Exercise_2"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <local:ViewModelPart_1 x:Key="currentViewModelPart_1"></local:ViewModelPart_1>
+        <local:ViewModelPart_2 x:Key="currentViewModel_Part_2"></local:ViewModelPart_2>
+        <local:ViewModelPart_3 x:Key="currentViewModelPart_3"></local:ViewModelPart_3>
+        
+        <Style x:Key="userControlElementTriggeredColor" TargetType="local:Part_1Part_1">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="RightTagSliderValueColorDependency" Value="Red"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="stylePart3TriggeredColor" TargetType="local:Part_3">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="BackgroundDependency" Value="LightGreen"></Setter>
+                </Trigger>
+                <Trigger Property="Validation.HasError" Value="false">
+                    <Setter Property="BackgroundDependency" Value="Pink"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <local:IntToBoolConverter x:Key="IntToBoolConverter"/>
+        <local:AgeToBirthYearConverter x:Key="AgeToBirthYearConverter"/>
+        <local:NumbersToEnumConverter x:Key="NumbersToEnumConverter"/>
+
+        <ObjectDataProvider MethodName="GetValues" ObjectType="{x:Type local:OrderStatus_Person}" x:Key="GetOrderStatus_PersonEnumValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:OrderStatus_Person"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+
+        <ResourceDictionary x:Key="MarerialDesignResourceDictioaryKey">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        
+    </Application.Resources>
+</Application>

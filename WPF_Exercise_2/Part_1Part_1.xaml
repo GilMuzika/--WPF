@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="WPF_Exercise_2.Part_1Part_1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Exercise_2"
+             mc:Ignorable="d">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label x:Name="lblLeftTag" Width="60" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"></Label>
+            <Slider x:Name="sldSlider" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="20"  Height="20" Width="500" Maximum="100"/>
+            <Border x:Name="lblRightTag" Width="75">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Label FontWeight="Bold" x:Name="lblRightTagSliderValue" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"></Label>
+                    <Label FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">/</Label>
+                    <Label FontWeight="Bold" x:Name="lblRightTagSliderMax" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"></Label>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
